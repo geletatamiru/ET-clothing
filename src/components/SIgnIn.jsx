@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { auth, googleProvider, signInWithPopup, signInWithEmailAndPassword, signOut } from "../firebase/firebase";
+import { auth, googleProvider, signInWithPopup, signInWithEmailAndPassword } from "../firebase/firebase";
 import FormInput from "./FormInput";
 import CustomButton from "./CustomButton";
 import "./SignIn.css";
@@ -8,17 +8,13 @@ import "./SignIn.css";
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [user, setUser] = useState(null); // Store user data
   const navigate = useNavigate();
 
   const handleSignIn = async (e) => {
     e.preventDefault();
     try {
-      const result = await signInWithEmailAndPassword(auth, email, password);
+      await signInWithEmailAndPassword(auth, email, password);
       alert("Login successful!");
-      const userData = result.user;
-      setUser(userData);
-      console.log(userData);
       navigate("/");
     } catch (error) {
       alert(error.message);
@@ -27,23 +23,12 @@ const SignIn = () => {
   // Handle submit for email/password sign-in (not Google)
   const handleGoogleSignIn = async () => {
     try {
-      const result = await signInWithPopup(auth, googleProvider);
+      await signInWithPopup(auth, googleProvider);
       alert("Google Sign-In successful!");
-      const userData = result.user;
-      setUser(userData);
-      console.log(userData);
       navigate("/");
     } catch (error) {
       alert(error.message);
     }
-  };
-
-
-  // Sign out from the application
-  const handleSignOut = async () => {
-    await signOut(auth);
-    navigate("/signin")
-    setUser(null);
   };
 
   return (
