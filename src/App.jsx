@@ -1,9 +1,10 @@
-import { use, useEffect, useState } from 'react';
+import {  useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { getDoc } from 'firebase/firestore';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth , createUserProfileDocument} from './firebase/firebase';
-
+import { setUser } from './redux/userSlice';
 import HomePage from "./pages/HomePage";
 import Shop from "./pages/Shop";
 import Header from "./components/Header";
@@ -13,28 +14,29 @@ import './App.css'
 
 
 function App() {
-  const [user, setUser] = useState(null);
+  const dispatch = useDispatch();
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (userAuth) => {
       if (userAuth) {
-        setUser(userAuth);  // Set user data if logged in
         const userRef = await createUserProfileDocument(userAuth);
         const userSnap = await getDoc(userRef);
+        const userData = userSnap.data();
+        const createdAt = userData.createdAt ? userData.createdAt.toDate().toISOString() : null;
         if(userSnap.exists()){
-          setUser({id: userSnap.data().uid,...userSnap.data()})
+          dispatch(setUser({ id: userSnap.id, ...userData, createdAt }));
         }
       } else {
-        setUser(null);   // Set user to null if not logged in
+        dispatch(setUser(null));      
       }
     });
 
     // Cleanup subscription when the component is unmounted
     return () => unsubscribe();
-  }, []);
+  }, [dispatch]);
 
   return (
     <Router>
-      <Header user={user} />  {/* Including the Header with links */}
+      <Header/>  {/* Including the Header with links */}
       <Routes>
         <Route path="/" element={<HomePage />}/>
         <Route path="/shop" element={<Shop />}/>

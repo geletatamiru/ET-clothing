@@ -1,9 +1,11 @@
 import { signOut, auth } from "../firebase/firebase";
 import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import logo from '../images/logo-img/crown.svg'
 import "./Header.css";
 
-const Header = ({user}) => {
+const Header = () => {
+  const user = useSelector((state) => state.user.user);
   const navigate = useNavigate();
   const handleSignOut = async () => {
     try {
