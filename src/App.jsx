@@ -1,6 +1,6 @@
 import {  useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { getDoc } from 'firebase/firestore';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth , createUserProfileDocument} from './firebase/firebase';
@@ -15,6 +15,8 @@ import './App.css'
 
 function App() {
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.user.user);
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (userAuth) => {
       if (userAuth) {
@@ -40,8 +42,11 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />}/>
         <Route path="/shop" element={<Shop />}/>
-        <Route path="/signin" element={<SignInAndSignUpPage />}  />
-    </Routes>
+        <Route 
+          path="/signin" 
+          element={user ? <Navigate to="/" replace /> : <SignInAndSignUpPage />} 
+        />    
+      </Routes>
     </Router>
   )
 }

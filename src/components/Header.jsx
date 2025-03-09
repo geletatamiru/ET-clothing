@@ -1,11 +1,14 @@
 import { signOut, auth } from "../firebase/firebase";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import CartIcon from "./CartIcon";
+import CartDropDown from "./CartDropDown";
 import logo from '../images/logo-img/crown.svg'
 import "./Header.css";
 
 const Header = () => {
   const user = useSelector((state) => state.user.user);
+  const isHidden = useSelector((state) => state.cart.hidden )
   const navigate = useNavigate();
   const handleSignOut = async () => {
     try {
@@ -15,6 +18,7 @@ const Header = () => {
       console.error("Error signing out: ", error); // Handle any error
     }
   };
+
   return (
     <div className="header">
       <Link to="/">
@@ -33,7 +37,11 @@ const Header = () => {
               SIGN IN
             </Link>
         )}
+        <CartIcon/>
       </div>
+      {
+        isHidden && <CartDropDown />
+      }
     </div>
   )
 }
