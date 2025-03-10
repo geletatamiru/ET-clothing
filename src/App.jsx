@@ -9,7 +9,7 @@ import HomePage from "./pages/HomePage";
 import Shop from "./pages/Shop";
 import Header from "./components/Header";
 import SignInAndSignUpPage from "./pages/SIgnInAndSignUpPage";
-
+import CheckoutPage from './pages/CheckoutPage';
 import './App.css'
 
 
@@ -46,6 +46,7 @@ function App() {
           path="/signin" 
           element={user ? <Navigate to="/" replace /> : <SignInAndSignUpPage />} 
         />    
+        <Route path='/checkout' element={<CheckoutPage />} />
       </Routes>
     </Router>
   )

@@ -20,7 +20,13 @@
   height: 240px;
   display: flex;
   flex-direction: column;
-  overflow: scroll;
+  overflow: auto;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+/* For Webkit browsers (Chrome, Safari) */
+.cart-dropdown .cart-items::-webkit-scrollbar {
+  display: none;
 }
 
 .cart-dropdown button {
