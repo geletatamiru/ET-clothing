@@ -20,6 +20,9 @@ export default function CheckoutPage() {
           <span>Quantity</span>
         </div>
         <div className="header-clock">
+          <span>Price</span>
+        </div>
+        <div className="header-clock">
           <span>Remove</span>
         </div>
       </div>

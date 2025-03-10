@@ -6,3 +6,8 @@ export const addItemToCart = (cartItems, cartItemToAdd) => {
     cartItems.push({ ...cartItemToAdd, quantity: 1 });
   }
 }
+export const removeItemFromCart = (cartItems, cartItemToRemove) => {
+  const existingItem = cartItems.find(item => item.id === cartItemToRemove.id);
+  existingItem.quantity -= 1;
+ 
+}
