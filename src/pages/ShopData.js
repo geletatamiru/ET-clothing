@@ -108,49 +108,49 @@ const SHOP_DATA = [
     routeName: 'sneakers',
     items: [
       {
-        id: 1,
+        id: 10,
         name: 'Adidas NMD',
         imageUrl: adidasnmd,
         price: 220
       },
       {
-        id: 2,
+        id: 11,
         name: 'Adidas Yeezy',
         imageUrl: yeezy,
         price: 280
       },
       {
-        id: 3,
+        id: 12,
         name: 'Black Converse',
         imageUrl: blackconverse,
         price: 110
       },
       {
-        id: 4,
+        id: 13,
         name: 'Nike White AirForce',
         imageUrl: whitenikehightops,
         price: 160
       },
       {
-        id: 5,
+        id: 14,
         name: 'Nike Red High Tops',
         imageUrl: nikesred,
         price: 160
       },
       {
-        id: 6,
+        id: 15,
         name: 'Nike Brown High Tops',
         imageUrl: nikebrown,
         price: 160
       },
       {
-        id: 7,
+        id: 16,
         name: 'Air Jordan Limited',
         imageUrl:  nikefunky,
         price: 190
       },
       {
-        id: 8,
+        id: 17,
         name: 'Timberlands',
         imageUrl: timberlands,
         price: 200
@@ -163,31 +163,31 @@ const SHOP_DATA = [
     routeName: 'jackets',
     items: [
       {
-        id: 1,
+        id: 18,
         name: 'Black Jean Shearling',
         imageUrl: blackshearling,
         price: 125
       },
       {
-        id: 2,
+        id: 19,
         name: 'Blue Jean Jacket',
         imageUrl: bluejeanjacket,
         price: 90
       },
       {
-        id: 3,
+        id: 20,
         name: 'Grey Jean Jacket',
         imageUrl: greyjeanjacket,
         price: 90
       },
       {
-        id: 4,
+        id: 21,
         name: 'Brown Shearling',
         imageUrl: brownshearling,
         price: 165
       },
       {
-        id: 5,
+        id: 22,
         name: 'Tan Trench',
         imageUrl: browntrench,
         price: 185
@@ -200,43 +200,43 @@ const SHOP_DATA = [
     routeName: 'womens',
     items: [
       {
-        id: 1,
+        id: 23,
         name: 'Blue Tanktop',
         imageUrl: bluetank,
         price: 25
       },
       {
-        id: 2,
+        id: 24,
         name: 'Floral Blouse',
         imageUrl: floralblouse,
         price: 20
       },
       {
-        id: 3,
+        id: 25,
         name: 'Floral Dress',
         imageUrl: floralskirt,
         price: 80
       },
       {
-        id: 4,
+        id: 26,
         name: 'Red Dots Dress',
         imageUrl: redpolkadotdress,
         price: 80
       },
       {
-        id: 5,
+        id: 27,
         name: 'Striped Sweater',
         imageUrl: stripedsweater,
         price: 45
       },
       {
-        id: 6,
+        id: 28,
         name: 'Yellow Track Suit',
         imageUrl: yellowtracksuit,
         price: 135
       },
       {
-        id: 7,
+        id: 29,
         name: 'White Blouse',
         imageUrl: whitevest,
         price: 20
@@ -249,37 +249,37 @@ const SHOP_DATA = [
     routeName: 'mens',
     items: [
       {
-        id: 1,
+        id: 30,
         name: 'Camo Down Vest',
         imageUrl: camovest,
         price: 325
       },
       {
-        id: 2,
+        id: 31,
         name: 'Floral T-shirt',
         imageUrl: floralshirt,
         price: 20
       },
       {
-        id: 3,
+        id: 32,
         name: 'Black & White Longsleeve',
         imageUrl: longsleeve,
         price: 25
       },
       {
-        id: 4,
+        id: 33,
         name: 'Pink T-shirt',
         imageUrl: pinkshirt,
         price: 25
       },
       {
-        id: 5,
+        id: 34,
         name: 'Jean Long Sleeve',
         imageUrl: rollupjeanshirt,
         price: 40
       },
       {
-        id: 6,
+        id: 35,
         name: 'Burgundy T-shirt',
         imageUrl: plkadotshirt,
         price: 25
