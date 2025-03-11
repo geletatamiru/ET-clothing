@@ -2,7 +2,7 @@ import { useState } from "react";
 import { auth, createUserProfileDocument, createUserWithEmailAndPassword } from "../firebase/firebase";
 import FormInput from "./FormInput";
 import CustomButton from "./CustomButton";
-import "./SIgnUp.css";
+import "./SignUp.css";
 
 
 export default function SignUp() {
