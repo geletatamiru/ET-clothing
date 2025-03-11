@@ -41,7 +41,7 @@ function App() {
       <Header/>  {/* Including the Header with links */}
       <Routes>
         <Route path="/" element={<HomePage />}/>
-        <Route path="/shop" element={<Shop />}/>
+        <Route path="/shop/*" element={<Shop />}/>
         <Route 
           path="/signin" 
           element={user ? <Navigate to="/" replace /> : <SignInAndSignUpPage />} 
